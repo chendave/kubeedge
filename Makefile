@@ -99,7 +99,8 @@ keadm_lint:
 QEMU_ARCH ?= x86_64
 ARCH ?= amd64
 
-IMAGE_TAG ?= $(shell git describe --tags)
+#IMAGE_TAG ?= $(shell git describe --tags)
+IMAGE_TAG ?= latest
 
 .PHONY: cloudimage
 cloudimage:
@@ -126,6 +127,7 @@ edgeimage:
 
 .PHONY: edgesiteimage
 edgesiteimage:
+	$(info    ARCH is $(ARCH))
 	mkdir -p ./build/edgesite/tmp
 	rm -rf ./build/edgesite/tmp/*
 	curl -L -o ./build/edgesite/tmp/qemu-${QEMU_ARCH}-static.tar.gz https://github.com/multiarch/qemu-user-static/releases/download/v3.0.0/qemu-${QEMU_ARCH}-static.tar.gz
