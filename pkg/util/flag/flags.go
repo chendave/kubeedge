@@ -14,7 +14,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 
 @CHANGELOG
-KubeEdge Authors: delete useless functions
+KubeEdge Authors: delete useless functions.
 */
 
 package flag
@@ -24,7 +24,7 @@ import (
 	"k8s.io/klog"
 )
 
-// PrintFlags logs the flags in the flagset
+// PrintFlags logs the flags in the flagset.
 func PrintFlags(flags *pflag.FlagSet) {
 	flags.VisitAll(func(flag *pflag.Flag) {
 		klog.V(1).Infof("FLAG: --%s=%q", flag.Name, flag.Value)
