@@ -202,6 +202,7 @@ func edgecoreDeploymentSpec(imgURL, configmap string, replicas int) *apps.Deploy
 }
 
 // Function to create cloudcore deploymentspec object
+// test by dave2
 func cloudcoreDeploymentSpec(imgURL, configmap string, replicas int) *apps.DeploymentSpec {
 	portInfo := []v1.ContainerPort{{ContainerPort: 10000, Protocol: "TCP", Name: "websocket"}, {ContainerPort: 10001, Protocol: "UDP", Name: "quic"}}
 
